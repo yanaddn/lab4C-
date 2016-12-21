@@ -1,1 +1,2 @@
-# lab4C-
+ Lab 4 C++ 
+ Class hierarchy
