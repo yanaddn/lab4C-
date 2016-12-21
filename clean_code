@@ -1,0 +1,112 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+class plain
+{
+public:
+ virtual void out() = 0;
+ virtual void get() = 0;
+ double weight;
+ int seats;
+
+ void basicInfo()
+ {
+  cout << "Weight: " << weight << endl;
+  cout <<  "The number of seats: " << seats << endl;
+ }
+};
+
+class military : public plain
+{
+public:
+ double weapons;
+ void get() {
+  cout << "Weight: ";
+  cin >> weight;
+  cout << "The number of seats: ";
+  cin >> seats;
+  cout << "The number of weapons: ";
+  cin >> weapons;
+
+ }
+};
+class civilc : public plain
+{
+public:
+ int price;
+ void get() {
+  cout << "Weight: ";
+  cin >> weight;
+  cout << "The number of seats: ";
+  cin >> seats;
+  cout << "Price: ";
+  cin >> price;
+ }
+};
+class pass : public civilc
+{
+public:
+ void out()
+ {
+  cout << "Price: " << price;
+ }
+};
+class sport : public civilc
+{
+public:
+ void out()
+ {
+  cout << "Price: " << price;
+ }
+};
+class glider : public civilc
+{
+public:
+ void out()
+ {
+  cout << "Price: " << price;
+ }
+};
+
+class dest : public military
+{
+public:
+ void out()
+ {
+  cout << "The number of weapons: " << weapons;
+ }
+};
+class bomb : public military
+{
+public:
+ void out()
+ {
+  cout << "The number of weapons: " << weapons;
+ }
+};
+
+int main()
+{
+ int t;
+ plain *mas[6];
+ mas[1] = new pass;
+ mas[2] = new sport;
+ mas[3] = new glider;
+ mas[4] = new dest;
+ mas[5] = new bomb;
+ cout << "1. Passenger plain\n";
+ cout << "2. Sport plain\n";
+ cout << "3. Glider\n";
+ cout << "4. Destroyer\n";
+ cout << "5. Bomber\n";
+ cout << endl;
+ cin >> t;
+ cout << endl;
+ mas[t]->get();
+ cout << endl;
+ mas[t]->basicInfo();
+ mas[t]->out();
+ system ("pause");
+ return 0;
+}
