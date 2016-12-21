@@ -1,4 +1,4 @@
-// Lab #4 C++ Class hierarchy.
+// Lab #4 C++. Class hierarchy.
 //
 
 #include "stdafx.h"
@@ -92,26 +92,25 @@ public:
 
 int main()
 {
-	int t;
-	Planes *mas[6];
-	mas[1] = new Passenger;
-	mas[2] = new Sport;
-	mas[3] = new Glider;
-	mas[4] = new Destroyer;
-	mas[5] = new Bomber;
-	cout << "1. Passenger plain\n";
-	cout << "2. Sport plain\n";
+	int planeType;
+	Planes *plane[6];
+	plane[1] = new Passenger;
+	plane[2] = new Sport;
+	plane[3] = new Glider;
+	plane[4] = new Destroyer;
+	plane[5] = new Bomber;
+	cout << "1. Passenger plane\n";
+	cout << "2. Sport plane\n";
 	cout << "3. Glider\n";
 	cout << "4. Destroyer\n";
 	cout << "5. Bomber\n";
 	cout << endl;
-	cin >> t;
+	cin >> planeType;
 	cout << endl;
-	mas[t]->get();
+	plane[planeType]->get();
 	cout << endl;
-	mas[t]->basicInfo();
-	mas[t]->out();
+	plane[planeType]->basicInfo();
+	plane[planeType]->out();
 	system("pause");
 	return 0;
 }
-
